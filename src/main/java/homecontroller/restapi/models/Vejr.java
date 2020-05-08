@@ -1,11 +1,11 @@
 
-package homecontroller.restapi;
+package homecontroller.restapi.models;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Weather_ implements Serializable
+public class Vejr implements Serializable
 {
 
     private Integer id;

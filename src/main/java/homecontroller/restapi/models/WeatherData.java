@@ -1,29 +1,37 @@
+package homecontroller.restapi.models;
 
-package homecontroller.restapi;
-
-import java.io.Serializable;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class Weather implements Serializable
-{
+public class WeatherData {
+
+    private Integer wid;
 
     private Coord coord;
-    private List<Weather_> weather = null;
+
+    private List<Weather> weather = null;
     private String base;
+
     private Main main;
     private Integer visibility;
     private Wind wind;
+
     private Clouds clouds;
+
     private Integer dt;
+
     private Sys sys;
     private Integer timezone;
     private Integer id;
     private String name;
     private Integer cod;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -5321264384807135471L;
+
+    public Integer getWid() {
+        return wid;
+    }
+
+    public void setWid(Integer wid) {
+        this.wid = wid;
+    }
 
     public Coord getCoord() {
         return coord;
@@ -33,11 +41,11 @@ public class Weather implements Serializable
         this.coord = coord;
     }
 
-    public List<Weather_> getWeather() {
+    public List<Weather> getWeather() {
         return weather;
     }
 
-    public void setWeather(List<Weather_> weather) {
+    public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
 
@@ -129,12 +137,23 @@ public class Weather implements Serializable
         this.cod = cod;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    @Override
+    public String toString() {
+        return "WeatherData{" +
+                "wid=" + wid +
+                ", coord=" + coord +
+                ", weather=" + weather +
+                ", base='" + base + '\'' +
+                ", main=" + main +
+                ", visibility=" + visibility +
+                ", wind=" + wind +
+                ", clouds=" + clouds +
+                ", dt=" + dt +
+                ", sys=" + sys +
+                ", timezone=" + timezone +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", cod=" + cod +
+                '}';
     }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }

@@ -1,6 +1,6 @@
 package homecontroller.restapi.service;
 
-import homecontroller.restapi.Weather;
+import homecontroller.restapi.models.Weather;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

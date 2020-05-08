@@ -1,5 +1,5 @@
 
-package homecontroller.restapi;
+package homecontroller.restapi.models;
 
 import java.io.Serializable;
 import java.util.HashMap;
