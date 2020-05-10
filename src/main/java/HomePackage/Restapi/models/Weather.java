@@ -3,107 +3,35 @@ package HomePackage.Restapi.models;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Weather implements Serializable
 {
 
-    private Coord coord;
-    private List<Vejr> weather = null;
-    private String base;
-    private Main main;
-    private Integer visibility;
-    private Wind wind;
-    private Clouds clouds;
-    private Integer dt;
-    private Sys sys;
-    private Integer timezone;
     private Integer id;
-    private String name;
-    private Integer cod;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -5321264384807135471L;
+    private String main;
+    private String description;
+    private String icon;
 
-    public Coord getCoord() {
-        return coord;
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "id=" + id +
+                ", main='" + main + '\'' +
+                ", description='" + description + '\'' +
+                ", icon='" + icon + '\'' +
+                '}';
     }
 
-    public void setCoord(Coord coord) {
-        this.coord = coord;
+    public WeatherData getWeatherData() {
+        return weatherData;
     }
 
-    public List<Vejr> getWeather() {
-        return weather;
+    public void setWeatherData(WeatherData weatherData) {
+        this.weatherData = weatherData;
     }
 
-    public void setWeather(List<Vejr> weather) {
-        this.weather = weather;
-    }
-
-    public String getBase() {
-        return base;
-    }
-
-    public void setBase(String base) {
-        this.base = base;
-    }
-
-    public Main getMain() {
-        return main;
-    }
-
-    public void setMain(Main main) {
-        this.main = main;
-    }
-
-    public Integer getVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(Integer visibility) {
-        this.visibility = visibility;
-    }
-
-    public Wind getWind() {
-        return wind;
-    }
-
-    public void setWind(Wind wind) {
-        this.wind = wind;
-    }
-
-    public Clouds getClouds() {
-        return clouds;
-    }
-
-    public void setClouds(Clouds clouds) {
-        this.clouds = clouds;
-    }
-
-    public Integer getDt() {
-        return dt;
-    }
-
-    public void setDt(Integer dt) {
-        this.dt = dt;
-    }
-
-    public Sys getSys() {
-        return sys;
-    }
-
-    public void setSys(Sys sys) {
-        this.sys = sys;
-    }
-
-    public Integer getTimezone() {
-        return timezone;
-    }
-
-    public void setTimezone(Integer timezone) {
-        this.timezone = timezone;
-    }
+    private WeatherData weatherData;
 
     public Integer getId() {
         return id;
@@ -113,28 +41,28 @@ public class Weather implements Serializable
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getMain() {
+        return main;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMain(String main) {
+        this.main = main;
     }
 
-    public Integer getCod() {
-        return cod;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCod(Integer cod) {
-        this.cod = cod;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
 }

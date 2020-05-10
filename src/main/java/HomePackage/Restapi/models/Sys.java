@@ -13,8 +13,16 @@ public class Sys implements Serializable
     private String country;
     private Integer sunrise;
     private Integer sunset;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -781070244662868447L;
+
+    public WeatherData getWeatherData() {
+        return weatherData;
+    }
+
+    public void setWeatherData(WeatherData weatherData) {
+        this.weatherData = weatherData;
+    }
+
+    private WeatherData weatherData;
 
     public Integer getType() {
         return type;
@@ -56,12 +64,14 @@ public class Sys implements Serializable
         this.sunset = sunset;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    @Override
+    public String toString() {
+        return "Sys{" +
+                "type=" + type +
+                ", id=" + id +
+                ", country='" + country + '\'' +
+                ", sunrise=" + sunrise +
+                ", sunset=" + sunset +
+                '}';
     }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }

@@ -16,7 +16,7 @@ public class ApiServiceImpl implements ApiService{
 
     @Override
     public WeatherData getWeatherData(String name) {
-        WeatherData weatherData = restTemplate.getForObject("http://api.openweathermap.org/data/2.5/weather?q="+ name + "&appid=2ee4308c6d9061e40c94bebe09d5a399", WeatherData.class);
+        WeatherData weatherData = restTemplate.getForObject("http://api.openweathermap.org/data/2.5/weather?q=" + name + "&appid=2ee4308c6d9061e40c94bebe09d5a399&units=metric", WeatherData.class);
         return weatherData;
     }
 

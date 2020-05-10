@@ -9,8 +9,25 @@ public class Clouds implements Serializable
 {
 
     private Integer all;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 9189608630486226839L;
+    private long serialVersionUID;
+
+    public long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public void setSerialVersionUID(long serialVersionUID) {
+        this.serialVersionUID = serialVersionUID;
+    }
+
+    public WeatherData getWeatherData() {
+        return weatherData;
+    }
+
+    public void setWeatherData(WeatherData weatherData) {
+        this.weatherData = weatherData;
+    }
+
+    private WeatherData weatherData;
 
     public Integer getAll() {
         return all;
@@ -20,12 +37,10 @@ public class Clouds implements Serializable
         this.all = all;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    @Override
+    public String toString() {
+        return "Clouds{" +
+                "all=" + all +
+                '}';
     }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }

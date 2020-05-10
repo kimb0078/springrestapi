@@ -14,8 +14,16 @@ public class Main implements Serializable
     private Double tempMax;
     private Integer pressure;
     private Integer humidity;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 7258985553055636685L;
+
+    public WeatherData getWeatherData() {
+        return weatherData;
+    }
+
+    public void setWeatherData(WeatherData weatherData) {
+        this.weatherData = weatherData;
+    }
+
+    private WeatherData weatherData;
 
     public Double getTemp() {
         return temp;
@@ -65,12 +73,15 @@ public class Main implements Serializable
         this.humidity = humidity;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    @Override
+    public String toString() {
+        return "Main{" +
+                "temp=" + temp +
+                ", feelsLike=" + feelsLike +
+                ", tempMin=" + tempMin +
+                ", tempMax=" + tempMax +
+                ", pressure=" + pressure +
+                ", humidity=" + humidity +
+                '}';
     }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }

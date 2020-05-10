@@ -1,36 +1,32 @@
 package HomePackage.Restapi.models;
 
+import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class WeatherData {
-
-    private Integer wid;
-
+public class WeatherData implements Serializable {
+    private long serialVersionUID;
     private Coord coord;
-
     private List<Weather> weather = null;
     private String base;
-
     private Main main;
     private Integer visibility;
     private Wind wind;
-
     private Clouds clouds;
-
     private Integer dt;
-
     private Sys sys;
     private Integer timezone;
     private Integer id;
     private String name;
     private Integer cod;
 
-    public Integer getWid() {
-        return wid;
+    public long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setWid(Integer wid) {
-        this.wid = wid;
+    public void setSerialVersionUID(long serialVersionUID) {
+        this.serialVersionUID = serialVersionUID;
     }
 
     public Coord getCoord() {
@@ -140,8 +136,7 @@ public class WeatherData {
     @Override
     public String toString() {
         return "WeatherData{" +
-                "wid=" + wid +
-                ", coord=" + coord +
+                "coord=" + coord +
                 ", weather=" + weather +
                 ", base='" + base + '\'' +
                 ", main=" + main +

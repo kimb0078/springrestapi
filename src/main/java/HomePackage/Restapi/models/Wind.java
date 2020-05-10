@@ -10,8 +10,16 @@ public class Wind implements Serializable
 
     private Double speed;
     private Integer deg;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -8801898819260356743L;
+
+    private WeatherData weatherData;
+
+    public WeatherData getWeatherData() {
+        return weatherData;
+    }
+
+    public void setWeatherData(WeatherData weatherData) {
+        this.weatherData = weatherData;
+    }
 
     public Double getSpeed() {
         return speed;
@@ -27,14 +35,6 @@ public class Wind implements Serializable
 
     public void setDeg(Integer deg) {
         this.deg = deg;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

@@ -10,8 +10,16 @@ public class Coord implements Serializable
 
     private Double lon;
     private Double lat;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 6042396778001124721L;
+
+    public WeatherData getWeatherData() {
+        return weatherData;
+    }
+
+    public void setWeatherData(WeatherData weatherData) {
+        this.weatherData = weatherData;
+    }
+
+    private WeatherData weatherData;
 
     public Double getLon() {
         return lon;
@@ -29,12 +37,11 @@ public class Coord implements Serializable
         this.lat = lat;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    @Override
+    public String toString() {
+        return "Coord{" +
+                "lon=" + lon +
+                ", lat=" + lat +
+                '}';
     }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }
