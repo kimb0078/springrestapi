@@ -1,4 +1,4 @@
-package homecontroller.restapi.models;
+package HomePackage.Restapi.models;
 
 import java.util.List;
 
