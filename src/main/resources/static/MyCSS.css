@@ -1,5 +1,8 @@
 body{
-    font-family: Quicksand-SemiBold;
     background: skyblue;
     color: white;
+}
+.content{
+    max-width: 500px;
+    margin: auto;
 }
